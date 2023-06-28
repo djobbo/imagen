@@ -11,16 +11,30 @@ from diffusers import (
 #   CONFIGURATION   #
 #####################
 
+# Put your safetensors's model below
 model_id = "models/your_custom_model"
 
+# Put any integer here (same seed = same type of generated images)
 seed = 3
+
+# AI's intructions to generate images (How to prompt: https://stable-diffusion-art.com/prompt-guide/)
 prompt = ""
+
+# What you wouldn't to be included in images
 negative_prompt = ""
+
+# Image resolution
 image_size = 768
+
+# Number of setps (higher takes more time but should provide better results)
 num_inference_steps = 25
+
+# Number of generated images
 num_images = 10
 
-#####################
+###############################################################
+# /!\ Do not modify lines below, unless you know what you do. #
+###############################################################
 
 load_sampler = lambda config: DPMSolverMultistepScheduler.from_config(
     config, use_karras=True, algorithm_type="sde-dpmsolver++"
@@ -64,7 +78,6 @@ negative_prompt_embeds = torch.cat(neg_embeds, dim=1)
 out_folder_path = f"./output/{datetime.now().strftime('%Y%m%d_%H%M%S')}"
 os.makedirs(out_folder_path, exist_ok=True)
 
-
 def generate():
     print(f"Generating images from prompt using '{model_id}'")
     for k in range(num_images):
@@ -80,6 +93,5 @@ def generate():
         ).images[0]
         image_path = f"{out_folder_path}/{k}.jpg"
         image.save(image_path)
-
 
 generate()

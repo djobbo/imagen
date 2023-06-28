@@ -19,6 +19,7 @@ negative_prompt = ""
 image_size = 768
 num_inference_steps = 25
 num_images = 10
+guidance_scale = 1
 
 #####################
 
@@ -77,6 +78,7 @@ def generate():
             width=image_size,
             height=image_size,
             num_inference_steps=num_inference_steps,
+            guidance_scale=guidance_scale,
         ).images[0]
         image_path = f"{out_folder_path}/{k}.jpg"
         image.save(image_path)

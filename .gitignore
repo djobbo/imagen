@@ -6,3 +6,7 @@ tensors/*
 !tensors/.gitkeep
 
 output
+
+__pycache__
+
+*.local.py

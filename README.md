@@ -5,6 +5,7 @@
 ### Requirements
 
 - Python 3.10+
+- Python virtual environments
 - NVIDIA GPU with CUDA support (for faster inference)
 
 ### Create a python virtual environment

@@ -60,3 +60,4 @@ Each run will create a new folder with the current timestamp, amd images will be
 - [CivitAI](https://civitai.com/)
 - [Hugging Face Diffusers](https://huggingface.co/docs/diffusers/)
 - [Converting original .safetensors file to model](https://github.com/huggingface/diffusers/blob/main/scripts/convert_original_stable_diffusion_to_diffusers.py)
+- [Stable Diffusion prompt: a definitive guide](https://stable-diffusion-art.com/prompt-guide/)
